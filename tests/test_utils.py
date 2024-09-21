@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
 
-def test_read_json():
+def test_read_json() -> None:
     mock_read_json = Mock(return_value=r"C:\Users\Светлана\PycharmProjects\pythonProject3\data\products.json")
     read_json = mock_read_json
     read_json(

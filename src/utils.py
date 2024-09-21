@@ -27,7 +27,7 @@ def read_json(file_json: str) -> Any:
 
 def new_objects(prod: dict) -> Any:
     """Функция, которая принимает на список словарей
-        и создает объекты классов."""
+    и создает объекты классов."""
     categories = []
     for category in prod:
         products = []
