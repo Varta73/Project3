@@ -1,3 +1,5 @@
+from typing import Any
+
 
 class Product:
     name = str
@@ -5,7 +7,7 @@ class Product:
     price = float
     quantity = int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name: Any, description: Any, price: Any, quantity: Any) -> None:
         self.name = name
         self.description = description
         self.price = price
@@ -19,9 +21,9 @@ class Category:
     category_count = 0
     product_count = 0
 
-    def __init__(self, name, description, products):
+    def __init__(self, name: Any, description: Any, products: Any) -> None:
         self.name = name
         self.description = description
         self.products = products
-        Category.product_count += 1
-        Category.category_count += len(products)
+        Category.category_count += 1
+        Category.product_count += len(products)

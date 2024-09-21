@@ -1,4 +1,4 @@
-from src.product_category import Product, Category
+from src.product_category import *
 
 if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
