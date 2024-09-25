@@ -14,7 +14,7 @@ class Product:
         self.quantity = quantity
 
     @classmethod
-    def new_product(cls, product_dict):
+    def new_product(cls, product_dict: dict) -> Any:
         new_prod = cls(
             product_dict["name"],
             product_dict["description"],
@@ -23,20 +23,16 @@ class Product:
         )
         return new_prod
 
-
     @property
     def price(self) -> Any:
         return self.__price
 
     @price.setter
-    def price(self, price):
+    def price(self, price: Any) -> None:
         if price > 0:
             self.__price = price
         else:
             print("Цена не должна быть нулевая или отрицательная")
-
-
-
 
 
 class Category:
@@ -53,15 +49,13 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
-
-    def add_product(self, product: Product):
+    def add_product(self, product: Product) -> None:
         self.__products.append(product)
         Category.product_count += 1
 
     @property
-    def products(self):
+    def products1(self) -> str:
         prod: str = ""
         for product in self.__products:
             prod += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return prod
-
