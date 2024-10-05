@@ -16,7 +16,7 @@ class Product:
     def __str__(self) -> str:
         return f"{self.name}, {self.__price}. Остаток: {self.quantity}"
 
-    def __add__(self: Any, other) -> Any:
+    def __add__(self: Any, other: Any) -> Any:
         return self.__price * self.quantity + other.__price * other.quantity
 
     @classmethod
