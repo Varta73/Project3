@@ -10,19 +10,25 @@ class Smartphone(Product):
         self,
         name: Any,
         description: Any,
-        price: Any,
+        __price: Any,
         quantity: Any,
         efficiency: Any,
         model: Any,
         memory: Any,
         color: Any,
     ) -> None:
-        super().__init__(name, description, price, quantity)
+        super().__init__(name, description, __price, quantity)
         """Добавляем свойства"""
         self.efficiency = efficiency
         self.model = model
         self.memory = memory
         self.color = color
+
+    # def __add__(self: Any, other) -> Any:
+    #     if isinstance(other, Smartphone):
+    #         return (self.__price * self.quantity) + (other.__price * other.quantity)
+    #     raise TypeError
+
 
 
 if __name__ == "__main__":
@@ -43,12 +49,17 @@ class LawnGrass(Product):
     """Класс-наследник Газонная трава"""
 
     def __init__(
-        self, name: Any, description: Any, price: Any, quantity: Any, country: Any, germination_period: Any, color: Any
+        self, name: Any, description: Any, __price: Any, quantity: Any, country: Any, germination_period: Any, color: Any
     ) -> None:
-        super().__init__(name, description, price, quantity)
+        super().__init__(name, description, __price, quantity)
         self.country = country
         self.germination_period = germination_period
         self.color = color
+
+    # def __add__(self: Any, other: Any) -> Any:
+    #     if type(other) in LawnGrass:
+    #         return self.__price * self.quantity + other.__price * other.quantity
+    #     raise TypeError
 
 
 if __name__ == "__main__":
