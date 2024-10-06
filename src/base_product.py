@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class BaseProduct(ABC):
+    """Базовый абстрактный класс, который является родительским для классов продуктов"""
 
     @classmethod
     @abstractmethod
@@ -10,6 +11,9 @@ class BaseProduct(ABC):
 
 
 class PrintMixin:
+    """Kласс-миксин, который при создании объекта распечатывает
+    в консоль информацию о том, от какого класса и с какими параметрами был создан объект"""
+
     def __init__(self):
         print(repr(self))
         super().__init__()
