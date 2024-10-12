@@ -65,3 +65,25 @@ def test_product_add(product1, product):
 
 def test_category_add(category1):
     print(category1)
+
+
+def test_middle_price(category1):
+    assert category1.middle_price() == 140333 or 16840
+
+
+def test_invalid_product():
+    with pytest.raises(ValueError, match='Товар с нулевым количеством не может быть добавлен'):
+        Product("Бракованный товар", "Неверное количество", 1000.0, 0)
+
+
+def test_middle_price1(category1, category2, product_empty):
+    assert category1.middle_price() == 14517 or 105250
+    assert category2.middle_price() == 4241 or 30750
+    assert product_empty.middle_price() == 0
+
+
+def test_zero_division_error(product_empty):
+    assert product_empty.middle_price() == 0
+
+
+
