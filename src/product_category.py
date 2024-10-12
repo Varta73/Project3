@@ -13,7 +13,10 @@ class Product(BaseProduct, PrintMixin):
         self.name = name
         self.description = description
         self.__price = price
-        self.quantity = quantity
+        if quantity > 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__()
 
     def __str__(self) -> str:
@@ -79,3 +82,12 @@ class Category:
         for product in self.__products:
             prod += f"{str(product)}\n"
         return prod
+
+    def middle_price(self):
+        """Метод, который подсчитывает средний ценник всех товаров"""
+        total_price = sum(product.price for product in self.__products)
+        try:
+            middle_price = total_price / Category.product_count
+        except ZeroDivisionError:
+            return 0
+        return round(middle_price)
