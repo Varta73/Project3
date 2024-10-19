@@ -68,3 +68,20 @@ def lawngrass1():
 @pytest.fixture
 def lawngrass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture
+def product_0():
+    return Product("Бракованный товар", "Неверное количество", 1000.0, 0)
+
+
+@pytest.fixture
+def price_0():
+    return Product("Бракованный товар", "Неверное количество", 0, 1)
+
+
+@pytest.fixture
+def product_empty():
+    return Category("Пустая категория", "Нет продуктов", [])
+
+
